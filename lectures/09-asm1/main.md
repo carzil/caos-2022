@@ -56,7 +56,7 @@ img[alt$=">"] {
 ---
 # Вложенность регистров
 
-![kek](register.png)
+![Вложенность регистров](register.png)
 
 ---
 # Команды
@@ -67,9 +67,9 @@ label_name:
 ```
 
 Типы операндов команд:
-* imm — константы
-* r — регистры
-* m — память
+* `imm` — константы
+* `r` — регистры
+* `m` — память
 
 Хотя бы один из операндов должен быть регистром.
 
@@ -90,10 +90,10 @@ AT&T: `mov 0x10(%rax, %rcx, 2), %rax`
 ---
 # Арифметика 
 
-* add
-* sub
-* mul
-* div
+* `add`
+* `sub`
+* `mul`
+* `div`
 
 Например: `add dst, src`
 
@@ -116,7 +116,7 @@ AT&T: `mov 0x10(%rax, %rcx, 2), %rax`
 * `0x0001 - 0x0001 = 0x0000` (выставится `ZF`)
 * `0x0000 - 0x0001 = 0x1111` (выставится `SF`)
 * `0x1111 + 0x0001 = 0x0000` (выставится `CF`)
-* `0x0111 + 0x001 = 0x1000` (выставится `OF`)
+* `0x0111 + 0x0001 = 0x1000` (выставится `OF`)
 
 ---
 # Вычисление флагов
@@ -138,12 +138,12 @@ AT&T: `mov 0x10(%rax, %rcx, 2), %rax`
 ---
 # Godbolt
 
-![Godbolt](godbolt.png)
+![Godbolt if](godbolt.png)
 
 ---
 # Calling conventions
 
-<table>
+<table style="border:none; border-collapse:collapse; cellspacing:0; cellpadding:0">
 <tr>
 <td>
 <ul>
@@ -155,7 +155,7 @@ AT&T: `mov 0x10(%rax, %rcx, 2), %rax`
 </ul>
 </td>
 <td>
-<img src="stack_x64.png">
+<img src="stack_x64.png" width="1000px">
 </td>
 </tr>
 </table>
@@ -201,7 +201,7 @@ AT&T: `mov 0x10(%rax, %rcx, 2), %rax`
 ---
 # Intrinsics
 
-Расширения компилятора, позволяющие использовать векторные инструкции в коде на C.
+Расширения компилятора, позволяющие использовать векторные инструкции в коде на `C`.
 
 ```
 for (int i = 0; i < n; i+= 8) {
